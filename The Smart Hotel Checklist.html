@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Daily Journeys Smart Hotel Checklist | My Daily Journeys</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NS85J8ZRRC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NS85J8ZRRC');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Varela Round';
+            src: url('VarelaRound-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Varela Round', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: #FCF4D6;
+            color: #333;
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        /* --- CSS חדש עבור החלפת שפה --- */
+        .hidden-lang {
+            display: none;
+        }
+
+        .lang-toggle {
+            text-align: center;
+            padding: 15px;
+            background: #fff;
+            border-bottom: 2px solid #FF9955;
+            margin: 0 auto 20px auto;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 900px; /* התאמה לרוחב הקונטיינר */
+        }
+
+        .lang-btn {
+            font-family: 'Varela Round', sans-serif;
+            font-size: 1.1em;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: 2px solid #FF9955;
+            background: #fff;
+            color: #FF9955;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: #FFF9F0;
+            transform: translateY(-1px);
+        }
+
+        .lang-btn.active {
+            background: #FF9955;
+            color: white;
+        }
+        /* --- סוף CSS חדש --- */
+
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #FF9955 0%, #FF8844 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #FF9955;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #FFD4A3;
+            font-weight: 600;
+        }
+
+        .intro {
+            background: #FFF9F0;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+        
+        [dir="ltr"] .intro {
+            border-left: 5px solid #FF9955;
+        }
+        
+        [dir="rtl"] .intro {
+            border-right: 5px solid #FF9955;
+        }
+
+        .intro p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.9;
+        }
+
+        .signature {
+            font-style: italic;
+            color: #FF9955;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        [dir="ltr"] .signature {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .signature {
+            text-align: left;
+        }
+
+        .checklist-group {
+            margin-bottom: 30px;
+        }
+
+        .checklist-group h3 {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #fafafa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .checkbox-item:hover {
+            background: #FFF9F0;
+        }
+        
+        [dir="ltr"] .checkbox-item:hover {
+            transform: translateX(3px);
+        }
+
+        [dir="rtl"] .checkbox-item:hover {
+            transform: translateX(-3px);
+        }
+
+        .checkbox-item.checked {
+            background: #e8f5e9;
+            opacity: 0.8;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            accent-color: #FF9955;
+        }
+        
+        [dir="ltr"] .checkbox-item input[type="checkbox"] {
+            margin-right: 12px;
+        }
+        
+        [dir="rtl"] .checkbox-item input[type="checkbox"] {
+            margin-left: 12px;
+        }
+
+        .checkbox-item label {
+            flex: 1;
+            cursor: pointer;
+            font-size: 1.05em;
+        }
+
+        .checkbox-item.checked label {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .input-field {
+            display: inline-block;
+            border: none;
+            border-bottom: 2px solid #FF9955;
+            background: transparent;
+            padding: 5px 10px;
+            font-size: 1em;
+            min-width: 80px;
+            text-align: center;
+            font-family: inherit;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-bottom-color: #FF8844;
+            background: #FFF9F0;
+        }
+
+        .alert-box {
+            background: #FFF3E0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        [dir="ltr"] .alert-box {
+            border-left: 4px solid #FF9955;
+        }
+        
+        [dir="rtl"] .alert-box {
+            border-right: 4px solid #FF9955;
+        }
+
+        .alert-box h3 {
+            color: #FF9955;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .alert-box ul {
+            list-style-position: inside; /* Common style */
+        }
+
+        [dir="ltr"] .alert-box ul {
+            margin-left: 20px;
+        }
+
+        [dir="rtl"] .alert-box ul {
+            margin-right: 20px;
+        }
+
+
+        .alert-box li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .table-section {
+            overflow-x: auto;
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #FF9955;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        td input {
+            width: 100%;
+            border: 1px solid #ddd;
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .tips-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .tips-box h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .tips-box ul {
+            list-style-position: inside; /* Common style */
+        }
+        
+        [dir="ltr"] .tips-box ul {
+            margin-left: 20px;
+        }
+        
+        [dir="rtl"] .tips-box ul {
+            margin-right: 20px;
+        }
+
+        .tips-box li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .ai-helper-box {
+            background: linear-gradient(135deg, #FFF9F0 0%, #FFE8D0 100%);
+            padding: 35px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border: 3px solid #FF9955;
+            box-shadow: 0 8px 30px rgba(255, 153, 85, 0.15);
+        }
+
+        .ai-helper-box h2 {
+            color: #FF9955;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .ai-helper-box p {
+            font-size: 1.15em;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        .ai-helper-box strong {
+            color: #FF8844;
+        }
+
+        .ai-platforms {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0 20px 0;
+        }
+
+        .ai-platform-btn {
+            background: white;
+            border: 2px solid #FF9955;
+            color: #FF9955;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1.05em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .ai-platform-btn:hover {
+            background: #FF9955;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 153, 85, 0.3);
+        }
+
+        .ai-helper-box .example {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #555;
+        }
+        
+        [dir="ltr"] .ai-helper-box .example {
+            border-left: 4px solid #FF9955;
+        }
+
+        [dir="rtl"] .ai-helper-box .example {
+            border-right: 4px solid #FF9955;
+        }
+
+
+        .final-decision {
+            background: #FFF9F0;
+            padding: 30px;
+            border-radius: 15px;
+            border: 3px dashed #FF9955;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .final-decision h3 {
+            font-size: 1.8em;
+            color: #FF9955;
+            margin-bottom: 20px;
+        }
+
+        .final-decision input {
+            font-size: 1.3em;
+            padding: 15px;
+            border: 2px solid #FF9955;
+            border-radius: 10px;
+            width: 80%;
+            text-align: center;
+            background: white;
+        }
+
+        .footer {
+            background: #f5f5f5;
+            padding: 30px;
+            text-align: center;
+            border-top: 3px solid #FF9955;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .footer .social {
+            color: #FF9955;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+
+        .progress-bar {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 15px 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .progress-container {
+            background: #f0f0f0;
+            border-radius: 20px;
+            height: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #FF9955 0%, #FF8844 100%);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .reset-btn {
+            background: #ff5722;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            background: #e64a19;
+            transform: scale(1.05);
+        }
+        
+        /* --- קוד חדש ומשופר לסידור שורת המחיר (גם לעברית!) --- */
+        .price-group {
+            white-space: nowrap; /* מונע מהטקסט "per night" להישבר */
+            /* 🗑️ מחקנו את השורה 'margin-left' מכאן */
+        }
+        
+        /* מוסיף רווח באנגלית (משמאל למחיר) */
+        [dir="ltr"] .price-group {
+            margin-left: 8px; 
+        }
+
+        /* מוסיף רווח בעברית (מימין למחיר) */
+        [dir="rtl"] .price-group {
+            margin-right: 8px; 
+        }
+
+        .price-group .input-field {
+            max-width: 80px;     /* מגביל את הרוחב של תיבת המחיר */
+        }
+        /* --- סוף קוד חדש ומשופר --- */
+
+        /* --- קביעת גודל ברירת מחדל לכותרת הפתיחה --- */
+        .intro h2 {
+            font-size: 1.8em; /* זה הגודל שהיה קודם לדסקטופ */
+        }
+
+        @media (max-width: 768px) {
+        .content {
+            padding: 20px;
+        }
+
+        /* --- שנה את הכלל הזה --- */
+        .header h1 {
+            font-size: 1.7em;         /* הגדלנו קצת שיישבר יפה */
+            margin: 0 auto 10px auto; /* מוודא שזה נשאר ממורכז */
+        }
+
+        .section-title {
+            font-size: 1.2em;
+        }
+
+        table {
+            font-size: 0.9em;
+        }
+
+    /* --- הוסף את הכלל החדש הזה --- */
+    .intro h2 {
+        white-space: nowrap; /* מונע שבירת שורה */
+        font-size: 1.4em;    /* מקטין מעט כדי שייכנס */
+    }
+
+    .table-section td input[type="text"] {
+        padding: 8px 4px;   /* מקטין קצת את הריפוד הפנימי */
+        font-size: 0.9em;   /* מקטין ממש קצת את הפונט בתוך התיבה */
+        min-width: 55px;    /* נותן לתיבה רוחב מינימלי */
+    }
+}
+
+        @media print {
+            .progress-bar,
+            .reset-btn,
+            .lang-toggle { /* הסתרת כפתורי שפה בהדפסה */
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lang-toggle">
+        <button id="btn-lang-en" class="lang-btn active">English</button>
+        <button id="btn-lang-he" class="lang-btn">עברית</button>
+    </div>
+
+
+    <div id="lang-en-container" lang="en" dir="ltr">
+
+        <div class="progress-bar">
+                <div class="progress-container">
+                    <div class="progress-fill" id="progressBar">0%</div>
+                </div>
+            </div>
+        <div class="container">
+
+            <div class="header">
+                <h1> My Daily Journeys Smart Hotel Checklist </h1>
+                <div class="subtitle">The complete checklist for finding the perfect hotel, avoiding tourist traps, and starting to feel like you belong.</div>
+            </div>
+
+            <div class="content">
+                <div class="intro">
+                    <h2 style="color: #FF9955; margin-bottom: 20px; ">Welcome to my system.</h2>
+                    <p>This checklist is more than just a list. It's my operating system for turning a "hotel" into a "home."</p>
+                    <p>As a digital nomad, I've learned that the real magic of travel doesn't just happen at the attractions—it starts with the "base" you choose. A bad hotel can ruin a vacation. An authentic hotel, one that feels right, turns you into part of the place.</p>
+                    <p>This system isn't about finding the most "efficient" or "popular" hotel. It's designed to find the place that'll give you peace of mind and the perfect launching point to get out there, stop being a tourist, and start feeling like you belong.</p>
+                    <p><strong>Ready? Let's get started.</strong></p>
+                    <div class="signature">Yours, Maya 🧡</div>
+                </div>
+
+                <div class="ai-helper-box">
+                    <h2>🤖 Want AI to do the heavy lifting for you?</h2>
+                    <p><strong>This checklist doesn't have to be homework! 🎉</strong></p>
+                    <p>Instead of filling everything out yourself, let AI help you work through this list step by step. Just copy this checklist into one of these tools:</p>
+                    
+                    <div class="ai-platforms">
+                        <a href="https://gemini.google.com" target="_blank" class="ai-platform-btn">Google Gemini ✨</a>
+                        <a href="https://chatgpt.com" target="_blank" class="ai-platform-btn">ChatGPT 💬</a>
+                        <a href="https://perplexity.ai" target="_blank" class="ai-platform-btn">Perplexity 🔍</a>
+                    </div>
+
+                    <div class="example">
+                        <strong>💡 Example starter prompt:</strong><br>
+                        "Hey! I'm planning a trip to [destination] and need help finding the perfect hotel. Can you help me work through this checklist step by step and ask me questions to find the place that's right for me..."
+                    </div>
+
+                    <p><strong>How it works:</strong></p>
+                    <p>🔹 Just paste the checklist (or screenshot it) into a chat with the AI<br>
+                    🔹 It'll ask you questions and help you think through each point<br>
+                    🔹 You'll get personalized recommendations based on your answers<br>
+                    🔹 It's like having a personal travel advisor available 24/7!</p>
+
+                    <p style="text-align: center; margin-top: 25px; font-size: 1.1em; color: #FF9955;"><strong>✨ Let AI do the work, you make the call! ✨</strong></p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🎯 Step 1: Define Your Ideal "Base"</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.1em;">Before you even open Google, let's figure out what you're actually looking for.</p>
+                    
+                    <div class="checklist-group">
+                        <h3>💰 Basic Requirements:</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="budget" data-storage="budget">
+                            <label for="budget">Maximum budget per night: $<input type="text" class="input-field" placeholder="___" data-storage="budget-amount"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dates" data-storage="dates">
+                            <label for="dates">Stay dates: from <input type="text" class="input-field" placeholder="___" data-storage="date-from"> to <input type="text" class="input-field" placeholder="___" data-storage="date-to"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="people" data-storage="people">
+                            <label for="people">Number of guests: <input type="text" class="input-field" placeholder="___" data-storage="people-num"> (adults <input type="text" class="input-field" placeholder="___" data-storage="adults"> / children <input type="text" class="input-field" placeholder="___" data-storage="children">)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="room-type" data-storage="room-type">
+                            <label for="room-type">Room type needed: single / double / family / kitchenette / suite</label>
+                        </div>
+                    </div>
+
+                    <div class="checklist-group">
+                        <h3>📍 Location Priorities (check what matters most to you):</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location-tourist" data-storage="location-tourist">
+                            <label for="location-tourist">Tourist center (close to main attractions)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location-local" data-storage="location-local">
+                            <label for="location-local">Local neighborhood vibe (to feel like I belong)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location-nature" data-storage="location-nature">
+                            <label for="location-nature">Close to beach/nature</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location-transport" data-storage="location-transport">
+                            <label for="location-transport">Close to convenient public transportation</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location-quiet" data-storage="location-quiet">
+                            <label for="location-quiet">Completely quiet area</label>
+                        </div>
+                    </div>
+
+                    <div class="checklist-group">
+                        <h3>✨ Essential Amenities (check your "Must Haves"):</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="wifi" data-storage="wifi">
+                            <label for="wifi">Reliable, fast Wi-Fi (essential for nomads!)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="breakfast" data-storage="breakfast">
+                            <label for="breakfast">Breakfast included</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cancellation" data-storage="cancellation">
+                            <label for="cancellation">Free cancellation</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="reception" data-storage="reception">
+                            <label for="reception">24-hour front desk</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="parking" data-storage="parking">
+                            <label for="parking">Parking</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="pool" data-storage="pool">
+                            <label for="pool">Swimming pool</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="gym" data-storage="gym">
+                            <label for="gym">Fitness center</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ac" data-storage="ac">
+                            <label for="ac">Air conditioning</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="kitchen" data-storage="kitchen">
+                            <label for="kitchen">Kitchenette / full kitchen</label>
+                        </div>
+                    </div>
+
+                    <div class="checklist-group">
+                        <h3>📝 Shortlist: 3-5 hotels that passed initial screening</h3>
+                        <p style="margin-bottom: 15px; font-style: italic; color: #666;">Open HotelsCombined/Google, filter by what you checked above, and write down your finalists:</p>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hotel1" data-storage="hotel1">
+                            <label for="hotel1">Hotel name: <input type="text" class="input-field" style="min-width: 150px;" placeholder="___" data-storage="hotel1-name"> <span class="price-group"> - $<input type="text" class="input-field" placeholder="___" data-storage="hotel1-price"> per night</span></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hotel2" data-storage="hotel2">
+                            <label for="hotel2">Hotel name: <input type="text" class="input-field" style="min-width: 150px;" placeholder="___" data-storage="hotel2-name"> <span class="price-group"> - $<input type="text" class="input-field" placeholder="___" data-storage="hotel2-price"> per night</span></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hotel3" data-storage="hotel3">
+                            <label for="hotel3">Hotel name: <input type="text" class="input-field" style="min-width: 150px;" placeholder="___" data-storage="hotel3-name"> <span class="price-group"> - $<input type="text" class="input-field" placeholder="___" data-storage="hotel3-price"> per night</span></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hotel4" data-storage="hotel4">
+                            <label for="hotel4">Hotel name: <input type="text" class="input-field" style="min-width: 150px;" placeholder="___" data-storage="hotel4-name"> <span class="price-group"> - $<input type="text" class="input-field" placeholder="___" data-storage="hotel4-price"> per night</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🕵️ Step 2: Detective Work – Spotting Fakes & Checking Location</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.1em;">Now let's check each hotel on your shortlist.</p>
+                    
+                    <div class="checklist-group">
+                        <h3>🔍 Review Credibility Check (for each hotel):</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review1" data-storage="review1">
+                            <label for="review1">Read 5 negative reviews (1-2 stars): Understood what the real issues are (noise? cleanliness? service?).</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review2" data-storage="review2">
+                            <label for="review2">Looked for patterns: Are the same complaints repeated in recent reviews?</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review3" data-storage="review3">
+                            <label for="review3">Natural rating distribution: There are 3 and 4-star reviews (not just 5s or 1s).</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review4" data-storage="review4">
+                            <label for="review4">Recent timestamps: There are reviews from recent months.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review5" data-storage="review5">
+                            <label for="review5">No suspicious "review waves": Didn't see a sudden flood of 15 reviews in one day.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review6" data-storage="review6">
+                            <label for="review6">Natural language: Reviews contain specific details (names, room numbers, minor complaints) not just superlatives.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review7" data-storage="review7">
+                            <label for="review7">Credible profiles: Identified reviews from "Local Guides" on Google or profiles with diverse history.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review8" data-storage="review8">
+                            <label for="review8">Guest photos: Checked real, non-professional photos attached to reviews.</label>
+                        </div>
+                    </div>
+
+                    <div class="checklist-group">
+                        <h3>🗺️ Location & Safety Check (on Google Maps):</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location1" data-storage="location1">
+                            <label for="location1">Street View check: Looked at how the street and surroundings actually look.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location2" data-storage="location2">
+                            <label for="location2">"Home feeling": Are there local cafes, a grocery store, or a nice park within walking distance?</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location3" data-storage="location3">
+                            <label for="location3">Public transportation: There's a stop within reasonable walking distance (up to 500m / 0.3 miles).</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location4" data-storage="location4">
+                            <label for="location4">Safety: Read reviews mentioning "safety" or "nighttime noise" and checked if the area feels safe.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location5" data-storage="location5">
+                            <label for="location5">MDJ tip: Used the opportunity to pin my own "hidden gems" on the map around the hotel to see if the neighborhood "feels like home."</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🤝 Step 3: Cross-Referencing Human Intel</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.1em;">Don't rely only on the algorithm. Let's see what real people are saying.</p>
+                    
+                    <div class="checklist-group">
+                        <h3>📱 Social Media Check (Instagram/Facebook):</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="social1" data-storage="social1">
+                            <label for="social1">Searched tagged photos: Compared real guest photos to official marketing images.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="social2" data-storage="social2">
+                            <label for="social2">Checked comments: Are there customer complaints in the comments on the hotel's posts?</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="social3" data-storage="social3">
+                            <label for="social3">Hotel's responses: Do they respond to customers (especially negative ones)? Are they helpful or defensive?</label>
+                        </div>
+                    </div>
+
+                    <div class="checklist-group">
+                        <h3>📞 Direct Contact (only for your top choice):</h3>
+                        <p style="margin-bottom: 15px; font-style: italic; color: #666;">Send an email or call. How they respond is worth more than any review:</p>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contact1" data-storage="contact1">
+                            <label for="contact1">Asked about renovations: "Are there any renovation works planned at the hotel or nearby buildings during my dates?"</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contact2" data-storage="contact2">
+                            <label for="contact2">Asked about amenities: "What are the exact operating hours of the pool / dining room?"</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contact3" data-storage="contact3">
+                            <label for="contact3">Asked about the room: "I read a review about noise / weak Wi-Fi. Can I request a quiet room / one with good reception?"</label>
+                        </div>
+                    </div>
+
+                    <div class="checklist-group">
+                        <h3>👥 Facebook Group Check:</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="facebook" data-storage="facebook">
+                            <label for="facebook">Asked in a dedicated group (e.g., "Travelers in...") and requested genuine opinions about the hotel/area.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">📊 Step 4: The Final Decision</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.1em;">Now let's summarize everything and make a rational, not emotional, decision.</p>
+                    
+                    <div class="table-section">
+                        <h3 style="margin-bottom: 15px;">💰 Price Comparison Table</h3>
+                        <p style="margin-bottom: 15px; font-style: italic; color: #666;">Check the final price, including taxes, from at least 3 sources:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Hotel</th>
+                                    <th>HotelsCombined</th>
+                                    <th>Google</th>
+                                    <th>Official Site</th>
+                                    <th>Lowest Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1.</td>
+                                    <td><input type="text" placeholder="$___" data-storage="price1-HotelsCombined"></td>
+                                    <td><input type="text" placeholder="$___" data-storage="price1-google"></td>
+                                    <td><input type="text" placeholder="$___" data-storage="price1-official"></td>
+                                    <td><input type="text" placeholder="$___ at ___" data-storage="price1-best"></td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td><input type="text" placeholder="$___" data-storage="price2-HotelsCombined"></td>
+                                    <td><input type="text" placeholder="$___" data-storage="price2-google"></td>
+                                    <td><input type="text" placeholder="$___" data-storage="price2-official"></td>
+                                    <td><input type="text" placeholder="$___ at ___" data-storage="price2-best"></td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td><input type="text" placeholder="$___" data-storage="price3-HotelsCombined"></td>
+                                    <td><input type="text" placeholder="$___" data-storage="price3-google"></td>
+                                    <td><input type="text" placeholder="$___" data-storage="price3-official"></td>
+                                    <td><input type="text" placeholder="$___ at ___" data-storage="price3-best"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-section">
+                        <h3 style="margin-bottom: 15px;">✅ Final Scoring Table</h3>
+                        <p style="margin-bottom: 15px; font-style: italic; color: #666;">Rate each hotel from 1 to 10 based on what you defined as important:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Hotel 1</th>
+                                    <th>Hotel 2</th>
+                                    <th>Hotel 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Location & Neighborhood</td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score1-location"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score2-location"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score3-location"></td>
+                                </tr>
+                                <tr>
+                                    <td>Review Credibility</td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score1-reviews"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score2-reviews"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score3-reviews"></td>
+                                </tr>
+                                <tr>
+                                    <td>Value for Money</td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score1-value"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score2-value"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score3-value"></td>
+                                </tr>
+                                <tr>
+                                    <td>Amenities (important to me)</td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score1-amenities"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score2-amenities"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score3-amenities"></td>
+                                </tr>
+                                <tr>
+                                    <td>"Belonging" Feeling</td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score1-belonging"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score2-belonging"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score3-belonging"></td>
+                                </tr>
+                                <tr style="background: #FFF9F0; font-weight: 600;">
+                                    <td>Total:</td>
+                                    <td><input type="text" placeholder="___/50" data-storage="score1-total"></td>
+                                    <td><input type="text" placeholder="___/50" data-storage="score2-total"></td>
+                                    <td><input type="text" placeholder="___/50" data-storage="score3-total"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="final-decision">
+                        <h3>🏆 My Chosen Hotel:</h3>
+                        <input type="text" placeholder="Hotel name..." data-storage="final-hotel">
+                        <h3 style="margin-top: 30px; font-size: 1.4em;">Reasons for my choice:</h3>
+                        <textarea style="width: 90%; min-height: 100px; padding: 15px; border: 2px solid #FF9955; border-radius: 10px; font-size: 1.1em; font-family: inherit; margin-top: 10px;" placeholder="Write here why you chose this hotel..." data-storage="final-reasons"></textarea>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🎯 Step 5: The Moment Before You Click</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.1em;">Right before you enter your credit card, make sure you're covered.</p>
+                    
+                    <div class="checklist-group">
+                        <h3>✅ Pre-HotelsCombined Checklist:</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="final1" data-storage="final1">
+                            <label for="final1">Read cancellation policy carefully (word by word!)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="final2" data-storage="final2">
+                            <label for="final2">Travel insurance: I have it / will order separately</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="final3" data-storage="final3">
+                            <label for="final3">Dates confirmed: Verified the dates are correct</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="final4" data-storage="final4">
+                            <label for="final4">Screenshot saved: Saved a screenshot of the offer and price</label>
+                        </div>
+                    </div>
+
+                    <div class="alert-box">
+                        <h3>🚨 Red Flags - Don't Book If:</h3>
+                        <ul>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red1" data-storage="red1">
+                                <label for="red1">❌ More than 30% of reviews are 5-star with identical wording</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red2" data-storage="red2">
+                                <label for="red2">❌ No reviews from the past year</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red3" data-storage="red3">
+                                <label for="red3">❌ All negative reviews are from the same time period</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red4" data-storage="red4">
+                                <label for="red4">❌ Hotel doesn't respond to customers on social media at all</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red5" data-storage="red5">
+                                <label for="red5">❌ Social media photos are completely different from marketing materials</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red6" data-storage="red6">
+                                <label for="red6">❌ Price is suspiciously much lower than competitors</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red7" data-storage="red7">
+                                <label for="red7">❌ No response to your phone/email inquiries within 48 hours</label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tips-box">
+                    <h3>💡 Final Tips from a Nomad</h3>
+                    <ul>
+                        <li>✅ <strong>Invest the time:</strong> An hour of research can save you a full day of frustration on your trip.</li>
+                        <li>✅ <strong>Trust your gut:</strong> If something smells fishy, it probably is. Move on.</li>
+                        <li>✅ <strong>Free cancellation is gold:</strong> Sometimes it's worth paying a few extra bucks for peace of mind and flexibility.</li>
+                        <li>✅ <strong>Have a Plan B:</strong> Always keep one more hotel you liked in the back of your mind, just in case.</li>
+                    </ul>
+                </div>
+
+                <div class="intro" style="margin-top: 40px;">
+                    <p>This checklist is based on years of experience and (painful) mistakes I made along the way. Use it, adapt it to your needs, and most importantly—remember that a good vacation is one where you feel comfortable with your choices.</p>
+                    <p style="margin-top: 20px; font-size: 1.2em;"><strong>Found your authentic base using this kit?</strong></p>
+                    <p style="color: #FF9955; font-size: 1.1em;">Tag me in your story! <strong><a href="https://linktr.ee/MyDailyJourneys" target="_blank" style="color: #FF9955; text-decoration: none;">@mydailyjourneys_mdj</a></strong></p>
+                    <p style="margin-top: 15px;">For more guides, systems, and authentic maps, visit the blog:</p>
+                    <p style="font-weight: 600; color: #FF9955; font-size: 1.1em;"><a href="https://www.mydailyjourneys.com/shop" target="_blank" style="color: #FF9955; text-decoration: none;">www.mydailyjourneys.com/shop</a></p>
+                </div>
+
+                <div style="text-align: center; margin: 40px 0;">
+                    <button class="reset-btn" onclick="resetAll()">🔄 Reset All Data</button>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>🌍 <strong><a href="https://www.mydailyjourneys.com" target="_blank" style="color: #333; text-decoration: none;">My Daily Journeys</a></strong></p>
+                <p class="social"><a href="https://linktr.ee/MyDailyJourneys" target="_blank" style="color: #FF9955; text-decoration: none;">@mydailyjourneys_mdj</a></p>
+                <p style="margin-top: 20px; font-size: 0.95em; color: #888;">All rights reserved © My Daily Journeys. Happy travels! ✈️</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="lang-he-container" lang="he" dir="rtl">
+        <div class="progress-bar">
+                <div class="progress-container">
+                    <div class="progress-fill" id="progressBar">0%</div>
+                </div>
+            </div>
+        <div class="container">
+            
+            <div class="header">
+                <h1> הצ'ק ליסט החכם למציאת מלון </h1>
+                <div class="subtitle">הצ'ק ליסט המלא למציאת המלון המושלם, להימנע ממלכודות תיירים, ולהתחיל להרגיש שייכים.</div>
+            </div>
+
+            <div class="content">
+                <div class="intro">
+                    <h2 style="color: #FF9955; margin-bottom: 20px; ">ברוכים הבאים לשיטה שלי.</h2>
+                    <p>הצ'ק ליסט הזה הוא יותר מסתם רשימה. הוא מערכת ההפעלה שלי להפוך "מלון" ל"בית".</p>
+                    <p>כנוודת דיגיטלית, הבנתי שהקסם האמיתי של הטיול לא קורה רק באטרקציות; הוא מתחיל ב"בסיס" שבחרתם. מלון גרוע יכול להרוס חופשה. מלון אותנטי, כזה שמרגיש נכון, הופך אתכם לחלק מהמקום.</p>
+                    <p>השיטה הזו היא לא למצוא את המלון הכי "יעיל" או "פופולרי". היא נועדה למצוא את המקום שייתן לכם את השקט הנפשי ואת נקודת הזינוק המושלמת לצאת החוצה, להפסיק להיות תיירים, ולהתחיל להרגיש שייכים.</p>
+                    <p><strong>מוכנים? בואו נתחיל.</strong></p>
+                    <div class="signature">שלכם, מאיה 🧡</div>
+                </div>
+
+                <div class="ai-helper-box">
+                    <h2>🤖 רוצים שבינה מלאכותית תעשה את העבודה הקשה בשבילכם?</h2>
+                    <p><strong>הצ'ק ליסט הזה לא חייב להיות "שיעורי בית" מייגעים! 🎉</strong></p>
+                    <p>במקום למלא את כל השדות לבד, תנו לבינה מלאכותית לעזור לכם לעבור על הרשימה הזו צעד אחר צעד. פשוט העתיקו את הצ'ק ליסט לאחד מהכלים האלה:</p>
+                    
+                    <div class="ai-platforms">
+                        <a href="https://gemini.google.com" target="_blank" class="ai-platform-btn">Google Gemini ✨</a>
+                        <a href="https://chatgpt.com" target="_blank" class="ai-platform-btn">ChatGPT 💬</a>
+                        <a href="https://perplexity.ai" target="_blank" class="ai-platform-btn">Perplexity 🔍</a>
+                    </div>
+
+                    <div class="example">
+                        <strong>💡 דוגמה איך להתחיל:</strong><br>
+                        "היי! אני מתכננת טיול ל[יעד] ורוצה עזרה למצוא מלון מושלם. תעזרי לי לעבור על הצ'ק ליסט הזה צעד אחר צעד ותשאלי אותי שאלות כדי למצוא את המקום הכי מתאים לי..."
+                    </div>
+
+                    <p><strong>איך זה עובד?</strong></p>
+                    <p>🔹 פשוט העתיקו את הצ'ק ליסט (או צילום מסך) לצ'אט עם הבינה המלאכותית<br>
+                    🔹 היא תשאל אתכם שאלות ותעזור לכם לחשוב על כל נקודה<br>
+                    🔹 תקבלו המלצות מותאמות אישית בהתאם לתשובות שלכם<br>
+                    🔹 זה כמו יועץ נסיעות פרטי שזמין 24/7!</p>
+
+                    <p style="text-align: center; margin-top: 25px; font-size: 1.1em; color: #FF9955;"><strong>✨ העבודה הקשה על הבינה המלאכותית, ההחלטה הסופית עליכם! ✨</strong></p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🎯 שלב 1: הגדרת ה'בסיס' האידיאלי</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.1em;">לפני שאתם בכלל פותחים את גוגל, בואו נבין מה אתם באמת מחפשים.</p>
+                    
+                    <div class="checklist-group">
+                        <h3>💰 הגדרת צרכים בסיסיים:</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="budget" data-storage="budget">
+                            <label for="budget">תקציב מקסימלי ללילה: <input type="text" class="input-field" placeholder="___" data-storage="budget-amount"> ₪/$\€</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dates" data-storage="dates">
+                            <label for="dates">תאריכי השהות: מ-<input type="text" class="input-field" placeholder="___" data-storage="date-from"> עד <input type="text" class="input-field" placeholder="___" data-storage="date-to"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="people" data-storage="people">
+                            <label for="people">מספר אנשים: <input type="text" class="input-field" placeholder="___" data-storage="people-num"> (מבוגרים <input type="text" class="input-field" placeholder="___" data-storage="adults"> / ילדים <input type="text" class="input-field" placeholder="___" data-storage="children">)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="room-type" data-storage="room-type">
+                            <label for="room-type">סוג חדר נדרש: יחיד / זוגי / משפחתי / עם מטבחון / סוויטה</label>
+                        </div>
+                    </div>
+
+                    <div class="checklist-group">
+                        <h3>📍 דרישות מיקום (סמנו מה שהכי חשוב לכם):</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location-tourist" data-storage="location-tourist">
+                            <label for="location-tourist">מרכז תיירותי (קרוב לאטרקציות ראשיות)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location-local" data-storage="location-local">
+                            <label for="location-local">שכונה מקומית תוססת (להרגיש "שייכות")</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location-nature" data-storage="location-nature">
+                            <label for="location-nature">קרוב לחוף/טבע</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location-transport" data-storage="location-transport">
+                            <label for="location-transport">קרוב לתחבורה ציבורית נוחה</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location-quiet" data-storage="location-quiet">
+                            <label for="location-quiet">אזור שקט לחלוטין</label>
+                        </div>
+                    </div>
+
+                    <div class="checklist-group">
+                        <h3>✨ שירותים חיוניים (סמנו את ה-"Must Haves" שלכם):</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="wifi" data-storage="wifi">
+                            <label for="wifi">Wi-Fi יציב ומהיר (חובה לנוודים!)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="breakfast" data-storage="breakfast">
+                            <label for="breakfast">ארוחת בוקר כלולה</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cancellation" data-storage="cancellation">
+                            <label for="cancellation">ביטול חינמי</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="reception" data-storage="reception">
+                            <label for="reception">קבלה 24 שעות</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="parking" data-storage="parking">
+                            <label for="parking">חניה</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="pool" data-storage="pool">
+                            <label for="pool">בריכת שחייה</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="gym" data-storage="gym">
+                            <label for="gym">חדר כושר</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ac" data-storage="ac">
+                            <label for="ac">מזגן</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="kitchen" data-storage="kitchen">
+                            <label for="kitchen">מטבחון / מטבח מאובזר</label>
+                        </div>
+                    </div>
+
+                    <div class="checklist-group">
+                        <h3>📝 רשימה קצרה: 3-5 מלונות שעברו את הסינון הראשוני</h3>
+                        <p style="margin-bottom: 15px; font-style: italic; color: #666;">פתחו את HotelsCombined/Google, סננו לפי מה שסימנתם למעלה, ורשמו את הפיינליסטים:</p>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hotel1" data-storage="hotel1">
+                            <label for="hotel1">שם המלון: <input type="text" class="input-field" style="min-width: 150px;" placeholder="___" data-storage="hotel1-name"> <span class="price-group"> - ₪<input type="text" class="input-field" placeholder="___" data-storage="hotel1-price"> ללילה</span></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hotel2" data-storage="hotel2">
+                            <label for="hotel2">שם המלון: <input type="text" class="input-field" style="min-width: 150px;" placeholder="___" data-storage="hotel2-name"> <span class="price-group"> - ₪<input type="text" class="input-field" placeholder="___" data-storage="hotel2-price"> ללילה</span></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hotel3" data-storage="hotel3">
+                            <label for="hotel3">שם המלון: <input type="text" class="input-field" style="min-width: 150px;" placeholder="___" data-storage="hotel3-name"> <span class="price-group"> - ₪<input type="text" class="input-field" placeholder="___" data-storage="hotel3-price"> ללילה</span></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hotel4" data-storage="hotel4">
+                            <label for="hotel4">שם המלון: <input type="text" class="input-field" style="min-width: 150px;" placeholder="___" data-storage="hotel4-name"> <span class="price-group"> - ₪<input type="text" class="input-field" placeholder="___" data-storage="hotel4-price"> ללילה</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🕵️ שלב 2: עבודת בילוש – סינון זיופים ובדיקת מיקום</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.1em;">עכשיו נבדוק כל מלון מהרשימה הקצרה שלכם.</p>
+                    
+                    <div class="checklist-group">
+                        <h3>🔍 ניתוח אמינות ביקורות (לכל מלון):</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review1" data-storage="review1">
+                            <label for="review1">קראתי 5 ביקורות שליליות (1-2 כוכבים): הבנתי מה הבעיות האמיתיות (רעש? ניקיון? שירות?).</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review2" data-storage="review2">
+                            <label for="review2">חיפשתי דפוסים: האם אותן תלונות חוזרות על עצמן בביקורות עדכניות?</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review3" data-storage="review3">
+                            <label for="review3">דירוג פזור טבעי: יש ביקורות של 3 ו-4 כוכבים (לא רק 5 או 1).</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review4" data-storage="review4">
+                            <label for="review4">תאריכים עדכניים: יש ביקורות מהחודשים האחרונים.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review5" data-storage="review5">
+                            <label for="review5">אין "גלי ביקורות" חשודים: לא ראיתי הצפה פתאומית של 15 ביקורות ביום אחד.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review6" data-storage="review6">
+                            <label for="review6">שפה טבעית: הביקורות מכילות פרטים ספציפיים (שמות, מספר חדר, תלונות קטנות) ולא רק סופרלטיבים.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review7" data-storage="review7">
+                            <label for="review7">פרופילים אמינים: זיהיתי ביקורות של "Local Guides" בגוגל או פרופילים עם היסטוריה מגוונת.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="review8" data-storage="review8">
+                            <label for="review8">תמונות אורחים: בדקתי תמונות אמיתיות ולא מקצועיות שצורפו לביקורות.</label>
+                        </div>
+                    </div>
+
+                    <div class="checklist-group">
+                        <h3>🗺️ בדיקת מיקום ובטיחות (ב-Google Maps):</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location1" data-storage="location1">
+                            <label for="location1">בדיקת Street View: בדקתי איך הרחוב והסביבה נראים באמת.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location2" data-storage="location2">
+                            <label for="location2">"תחושת בית": האם יש בתי קפה מקומיים, סופרמרקט או פארק נעים במרחק הליכה?</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location3" data-storage="location3">
+                            <label for="location3">תחבורה ציבורית: יש תחנה במרחק הליכה סביר (עד 500 מטר).</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location4" data-storage="location4">
+                            <label for="location4">בטיחות: קראתי ביקורות שמזכירות "בטיחות" או "רעש בלילה" ובדקתי אם האזור מרגיש בטוח.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="location5" data-storage="location5">
+                            <label for="location5">טיפ MDJ: ניצלתי את ההזדמנות ונעצתי "פנינים נסתרות" משלי על המפה מסביב למלון, כדי לראות אם השכונה "מרגישה בית".</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🤝 שלב 3: הצלבת מידע אנושי</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.1em;">אל תסמכו רק על האלגוריתם. בואו נראה מה אנשים אמיתיים אומרים.</p>
+                    
+                    <div class="checklist-group">
+                        <h3>📱 בדיקה ברשתות חברתיות (אינסטגרם/פייסבוק):</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="social1" data-storage="social1">
+                            <label for="social1">חיפשתי תמונות מתויגות (Tagged Photos): השוויתי תמונות אמיתיות של אורחים לתמונות היח"צ הרשמיות.</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="social2" data-storage="social2">
+                            <label for="social2">בדקתי תגובות: האם יש תלונות של לקוחות בתגובות לפוסטים של המלון?</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="social3" data-storage="social3">
+                            <label for="social3">תגובת המלון: האם הם מגיבים ללקוחות (במיוחד לשליליים)? האם הם שירותיים או מתגוננים?</label>
+                        </div>
+                    </div>
+
+                    <div class="checklist-group">
+                        <h3>📞 יצירת קשר ישיר (רק למלון המועדף עליכם):</h3>
+                        <p style="margin-bottom: 15px; font-style: italic; color: #666;">שלחו מייל או התקשרו. האופן שבו עונים שווה יותר מכל ביקורת:</p>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contact1" data-storage="contact1">
+                            <label for="contact1">שאלתי על שיפוצים: "האם יש עבודות שיפוץ מתוכננות במלון או בבניין ליד בתאריכים שלי?"</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contact2" data-storage="contact2">
+                            <label for="contact2">שאלתי על שירותים: "מה שעות הפעילות המדויקות של הבריכה / חדר האוכל?"</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contact3" data-storage="contact3">
+                            <label for="contact3">שאלתי על החדר: "קראתי ביקורת על רעש / Wi-Fi חלש. האם אפשר לבקש חדר שקט / עם קליטה טובה?"</label>
+                        </div>
+                    </div>
+
+                    <div class="checklist-group">
+                        <h3>👥 בדיקה בקבוצות פייסבוק:</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="facebook" data-storage="facebook">
+                            <label for="facebook">שאלתי בקבוצה ייעודית (למשל: "מטיילים ב...") וביקשתי חוות דעת אמיתית על המלון / האזור.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">📊 שלב 4: ההחלטה הסופית</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.1em;">עכשיו נסכם הכל ונקבל החלטה רציונלית, לא רגשית.</p>
+                    
+                    <div class="table-section">
+                        <h3 style="margin-bottom: 15px;">💰 טבלת השוואת מחירים</h3>
+                        <p style="margin-bottom: 15px; font-style: italic; color: #666;">בדקו את המחיר הסופי, כולל מיסים, לפחות ב-3 מקורות:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>מלון</th>
+                                    <th>HotelsCombined</th>
+                                    <th>Google</th>
+                                    <th>אתר רשמי</th>
+                                    <th>מחיר נמוך ביותר</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1.</td>
+                                    <td><input type="text" placeholder="₪___" data-storage="price1-HotelsCombined"></td>
+                                    <td><input type="text" placeholder="₪___" data-storage="price1-google"></td>
+                                    <td><input type="text" placeholder="₪___" data-storage="price1-official"></td>
+                                    <td><input type="text" placeholder="₪___ ב-___" data-storage="price1-best"></td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td><input type="text" placeholder="₪___" data-storage="price2-HotelsCombined"></td>
+                                    <td><input type="text" placeholder="₪___" data-storage="price2-google"></td>
+                                    <td><input type="text" placeholder="₪___" data-storage="price2-official"></td>
+                                    <td><input type="text" placeholder="₪___ ב-___" data-storage="price2-best"></td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td><input type="text" placeholder="₪___" data-storage="price3-HotelsCombined"></td>
+                                    <td><input type="text" placeholder="₪___" data-storage="price3-google"></td>
+                                    <td><input type="text" placeholder="₪___" data-storage="price3-official"></td>
+                                    <td><input type="text" placeholder="₪___ ב-___" data-storage="price3-best"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-section">
+                        <h3 style="margin-bottom: 15px;">✅ טבלת הניקוד הסופי</h3>
+                        <p style="margin-bottom: 15px; font-style: italic; color: #666;">תנו ציון מ-1 עד 10 לכל מלון לפי מה שהגדרתם כחשוב לכם:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>קטגוריה</th>
+                                    <th>מלון 1</th>
+                                    <th>מלון 2</th>
+                                    <th>מלון 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>מיקום ושכונה</td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score1-location"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score2-location"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score3-location"></td>
+                                </tr>
+                                <tr>
+                                    <td>אמינות ביקורות</td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score1-reviews"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score2-reviews"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score3-reviews"></td>
+                                </tr>
+                                <tr>
+                                    <td>יחס מחיר-איכות</td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score1-value"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score2-value"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score3-value"></td>
+                                </tr>
+                                <tr>
+                                    <td>שירותים (שחשובים לי)</td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score1-amenities"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score2-amenities"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score3-amenities"></td>
+                                </tr>
+                                <tr>
+                                    <td>תחושת "שייכות" (Belonging)</td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score1-belonging"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score2-belonging"></td>
+                                    <td><input type="text" placeholder="___/10" data-storage="score3-belonging"></td>
+                                </tr>
+                                <tr style="background: #fef9f3; font-weight: 600;">
+                                    <td>סה"כ:</td>
+                                    <td><input type="text" placeholder="___/50" data-storage="score1-total"></td>
+                                    <td><input type="text" placeholder="___/50" data-storage="score2-total"></td>
+                                    <td><input type="text" placeholder="___/50" data-storage="score3-total"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="final-decision">
+                        <h3>🏆 המלון שבחרתי:</h3>
+                        <input type="text" placeholder="שם המלון..." data-storage="final-hotel">
+                        <h3 style="margin-top: 30px; font-size: 1.4em;">סיבות לבחירה:</h3>
+                        <textarea style="width: 90%; min-height: 100px; padding: 15px; border: 2px solid #fbc02d; border-radius: 10px; font-size: 1.1em; font-family: inherit; margin-top: 10px;" placeholder="כתבו כאן למה בחרתם במלון הזה..." data-storage="final-reasons"></textarea>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🎯 שלב 5: הרגע שלפני הכפתור</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.1em;">רגע לפני שאתם מכניסים כרטיס אשראי, ודאו שאתם מכוסים.</p>
+                    
+                    <div class="checklist-group">
+                        <h3>✅ צ'ק ליסט לפני הזמנה:</h3>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="final1" data-storage="final1">
+                            <label for="final1">קראתי את תנאי הביטול בעיון (מילה במילה!)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="final2" data-storage="final2">
+                            <label for="final2">ביטוח נסיעות: יש לי / אזמין בנפרד</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="final3" data-storage="final3">
+                            <label for="final3">אישור זמינות: וידאתי שהתאריכים נכונים</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="final4" data-storage="final4">
+                            <label for="final4">העתק מזהה: שמרתי צילום מסך של ההצעה והמחיר</label>
+                        </div>
+                    </div>
+
+                    <div class="alert-box">
+                        <h3>🚨 דגלים אדומים - אל תזמינו אם:</h3>
+                        <ul>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red1" data-storage="red1">
+                                <label for="red1">❌ יותר מ-30% ביקורות של 5 כוכבים עם אותן מילים</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red2" data-storage="red2">
+                                <label for="red2">❌ אין ביקורות מהשנה האחרונה</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red3" data-storage="red3">
+                                <label for="red3">❌ כל הביקורות השליליות מאותה תקופה</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red4" data-storage="red4">
+                                <label for="red4">❌ המלון לא מגיב בכלל ללקוחות ברשת</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red5" data-storage="red5">
+                                <label for="red5">❌ התמונות ברשתות החברתיות שונות לגמרי מהפרסומות</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red6" data-storage="red6">
+                                <label for="red6">❌ המחיר נמוך באופן חשוד מאוד מהמתחרים</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="red7" data-storage="red7">
+                                <label for="red7">❌ לא ענו לפניות טלפון/מייל שלכם במשך 48 שעות</label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tips-box">
+                    <h3>💡 טיפים אחרונים מנוודת</h3>
+                    <ul>
+                        <li>✅ <strong>תשקיעו זמן:</strong> שעה של מחקר יכולה לחסוך לכם יום שלם של עוגמת נפש בטיול.</li>
+                        <li>✅ <strong>תסמכו על האינטואיציה:</strong> אם משהו מריח חשוד, כנראה שהוא חשוד. ותרו והמשיכו הלאה.</li>
+                        <li>✅ <strong>ביטול חינמי זה זהב:</strong> לפעמים שווה לשלם עוד כמה שקלים בשביל השקט הנפשי והגמישות.</li>
+                        <li>✅ <strong>תהיו מוכנים לתוכנית ב':</strong> תמיד תשמרו בראש עוד מלון אחד שאהבתם, ליתר ביטחון.</li>
+                    </ul>
+                </div>
+
+                <div class="intro" style="margin-top: 40px;">
+                    <p>הצ'ק ליסט הזה מבוסס על שנות ניסיון וטעויות (כואבות) שעשיתי בדרך. השתמשו בו, התאימו אותו לצרכים שלכם, והכי חשוב - תזכרו שבסוף החופשה הטובה היא זו שאתם מרגישים בנוח עם הבחירות שלכם.</p>
+                    <p style="margin-top: 20px; font-size: 1.2em;"><strong>מצאתם בסיס אותנטי בעזרת הערכה?</strong></p>
+                    <p style="color: #FF9955; font-size: 1.1em;">תייגו אותי בסטורי שלכם! <strong><a href="https://linktr.ee/MyDailyJourneys" target="_blank" style="color: #FF9955; text-decoration: none;">@mydailyjourneys_mdj</a></strong></p>
+                    <p style="margin-top: 15px;">לעוד מדריכים, שיטות ומפות אותנטיות, בקרו בבלוג:</p>
+                    <p style="font-weight: 600; color: #FF9955; font-size: 1.1em;"><a href="https://www.mydailyjourneys.com/shop" target="_blank" style="color: #FF9955; text-decoration: none;">www.mydailyjourneys.com/shop</a></p>
+                </div>
+
+                <div style="text-align: center; margin: 40px 0;">
+                    <button class="reset-btn" onclick="resetAll()">🔄 איפוס כל הנתונים</button>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>🌍 <strong><a href="https://www.mydailyjourneys.com" target="_blank" style="color: #333; text-decoration: none;">My Daily Journeys</a></strong></p>
+                <p class="social"><a href="https://linktr.ee/MyDailyJourneys" target="_blank" style="color: #FF9955; text-decoration: none;">@mydailyjourneys_mdj</a></p>
+                <p style="margin-top: 20px; font-size: 0.95em; color: #888;">כל הזכויות שמורות © My Daily Journeys. טיול מהנה! ✈️</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Save and load functionality with localStorage
+        // WARNING: As per the execution plan, this script will likely malfunction
+        // due to duplicate IDs (e.g., 'progressBar') and duplicate data-storage keys
+        // in the HTML above. This is an unavoidable consequence of the "do not change" constraint.
+
+        function saveData() {
+            // Save all checkboxes
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                const storageKey = checkbox.getAttribute('data-storage');
+                if (storageKey) {
+                    // This will cause data collision between languages
+                    localStorage.setItem(storageKey, checkbox.checked);
+                }
+            });
+
+            // Save all text inputs and textareas
+            const inputs = document.querySelectorAll('input[type="text"], textarea');
+            inputs.forEach(input => {
+                const storageKey = input.getAttribute('data-storage');
+                if (storageKey) {
+                    // This will also cause data collision
+                    localStorage.setItem(storageKey, input.value);
+                }
+            });
+
+            updateProgress();
+        }
+
+        function loadData() {
+            // Load all checkboxes
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                const storageKey = checkbox.getAttribute('data-storage');
+                if (storageKey) {
+                    const saved = localStorage.getItem(storageKey);
+                    if (saved !== null) {
+                        checkbox.checked = saved === 'true';
+                        updateCheckboxState(checkbox);
+                    }
+                }
+            });
+
+            // Load all text inputs and textareas
+            const inputs = document.querySelectorAll('input[type="text"], textarea');
+            inputs.forEach(input => {
+                const storageKey = input.getAttribute('data-storage');
+                if (storageKey) {
+                    const saved = localStorage.getItem(storageKey);
+                    if (saved !== null) {
+                        input.value = saved;
+                    }
+                }
+            });
+
+            updateProgress();
+        }
+
+        function updateCheckboxState(checkbox) {
+            const item = checkbox.closest('.checkbox-item');
+            if (checkbox.checked) {
+                item.classList.add('checked');
+            } else {
+                item.classList.remove('checked');
+            }
+        }
+
+        // Track last progress milestone to avoid duplicate events
+        let lastProgressMilestone = 0;
+
+        function updateProgress() {
+            // This will count ALL checkboxes from BOTH languages
+            const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+            // This will count ALL checked boxes from BOTH languages
+            const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            
+            // This calculation will be incorrect (e.g., 10/100 instead of 5/50)
+            const percentage = Math.round((checkedBoxes.length / allCheckboxes.length) * 100);
+            
+            // This will attempt to find all progress bars, but getElementById is singular.
+            // Let's use querySelectorAll to at least *try* to update both.
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                bar.style.width = percentage + '%';
+                bar.textContent = percentage + '%';
+            });
+            
+            // Track progress milestones
+            if (typeof gtag === 'function') {
+                const milestones = [25, 50, 75, 100];
+                for (let milestone of milestones) {
+                    if (percentage >= milestone && lastProgressMilestone < milestone) {
+                        gtag('event', 'checklist_progress', {
+                            'event_category': 'Progress',
+                            'event_label': `${milestone}% Complete`,
+                            'value': milestone
+                        });
+                        lastProgressMilestone = milestone;
+                        break;
+                    }
+                }
+            }
+        }
+
+        function resetAll() {
+            // This function is now problematic as it's attached to *both* reset buttons.
+            // The logic below (from DOMContentLoaded) overrides this, but we keep it
+            // to preserve the original file content.
+        }
+        
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- קוד חדש ומשופר להחלפת שפה ---
+
+            // 1. מצא את כל החלקים בדף
+            const btnEn = document.getElementById('btn-lang-en');
+            const btnHe = document.getElementById('btn-lang-he');
+            const containerEn = document.getElementById('lang-en-container');
+            const containerHe = document.getElementById('lang-he-container');
+
+            // 2. בדוק מה שפת הדפדפן של המשתמש (הדרך הכי טובה)
+            const userLang = navigator.language || navigator.userLanguage; 
+            const isBrowserHebrew = userLang.startsWith('he'); // 'he' or 'he-IL'
+
+            // 3. בדוק מאיפה המשתמש הגיע (הבקשה שלך)
+            const referrer = document.referrer;
+            // (אנחנו מחפשים 'he' בקישור. אפשר להתאים את זה בדיוק לקישור שלך)
+            const isFromHebrewSite = referrer.includes('/he'); 
+
+            // 4. פונקציה חכמה שיודעת להחליף שפה
+            function showLanguage(lang) {
+                if (lang === 'he' && containerHe && containerEn) {
+                    // הצג עברית
+                    containerHe.classList.remove('hidden-lang');
+                    containerEn.classList.add('hidden-lang');
+                    btnHe.classList.add('active');
+                    btnEn.classList.remove('active');
+                    
+                    // Google Analytics - Track language switch
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'language_switch', {
+                            'language': 'Hebrew',
+                            'event_category': 'User Interaction'
+                        });
+                    }
+                } else if (containerEn && containerHe) { 
+                    // הצג אנגלית (ברירת מחדל)
+                    containerEn.classList.remove('hidden-lang');
+                    containerHe.classList.add('hidden-lang');
+                    btnEn.classList.add('active');
+                    btnHe.classList.remove('active');
+                    
+                    // Google Analytics - Track language switch
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'language_switch', {
+                            'language': 'English',
+                            'event_category': 'User Interaction'
+                        });
+                    }
+                }
+            }
+
+            // 5. === ההחלטה החשובה ===
+            // הצג עברית אם הדפדפן בעברית *או* אם המשתמש בא מאתר עברי
+            if (isBrowserHebrew || isFromHebrewSite) {
+                showLanguage('he');
+            } else {
+                showLanguage('en'); // אחרת, ברירת המחדל היא אנגלית
+            }
+            
+            // 6. חבר את הפונקציה לכפתורים (כדי שיוכלו להחליף ידנית)
+            if (btnEn) {
+                btnEn.addEventListener('click', () => {
+                    showLanguage('en');
+                    window.scrollTo(0, 0); // גלול למעלה אחרי החלפה
+                });
+            }
+            if (btnHe) {
+                btnHe.addEventListener('click', () => {
+                    showLanguage('he');
+                    window.scrollTo(0, 0); // גלול למעלה אחרי החלפה
+                });
+            }
+            // --- סוף קוד חדש ומשופר ---
+
+
+            // --- קוד מקורי נטען ---
+            loadData();
+
+            // Add listeners to all checkboxes
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    updateCheckboxState(this);
+                    saveData();
+                    
+                    // Google Analytics - Track checkbox interaction
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'checkbox_click', {
+                            'event_category': 'Checklist Interaction',
+                            'event_label': this.id || 'unknown',
+                            'value': this.checked ? 1 : 0
+                        });
+                    }
+                });
+
+                // Also toggle on label click
+                const item = checkbox.closest('.checkbox-item');
+                if (item) {
+                    item.addEventListener('click', function(e) {
+                        if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                            checkbox.checked = !checkbox.checked;
+                            updateCheckboxState(checkbox);
+                            saveData();
+                            
+                            // Google Analytics - Track checkbox interaction via label
+                            if (typeof gtag === 'function') {
+                                gtag('event', 'checkbox_click', {
+                                    'event_category': 'Checklist Interaction',
+                                    'event_label': checkbox.id || 'unknown',
+                                    'value': checkbox.checked ? 1 : 0
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+
+            // Add listeners to all text inputs
+            const inputs = document.querySelectorAll('input[type="text"], textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', saveData);
+                input.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+                
+                // Track when users fill in text fields
+                input.addEventListener('blur', function() {
+                    if (this.value.trim() !== '') {
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'text_input_filled', {
+                                'event_category': 'User Input',
+                                'event_label': this.getAttribute('data-storage') || 'unknown'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // *** Plan Adjustment 2: ***
+            // Need to manually hook up the correct reset buttons
+            // to the correct confirm messages.
+            const enResetBtn = document.querySelector('#lang-en-container .reset-btn');
+            const heResetBtn = document.querySelector('#lang-he-container .reset-btn');
+            
+            if(enResetBtn) {
+                enResetBtn.onclick = function() {
+                    if (confirm('Are you sure you want to delete all data? This action cannot be undone!')) {
+                        // Google Analytics - Track reset action
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'reset_checklist', {
+                                'event_category': 'User Action',
+                                'event_label': 'English version'
+                            });
+                        }
+                        
+                        localStorage.clear();
+                        location.reload();
+                    }
+                };
+            }
+            
+            if(heResetBtn) {
+                heResetBtn.onclick = function() {
+                    if (confirm('האם אתם בטוחים שברצונכם למחוק את כל הנתונים? פעולה זו לא ניתנת לביטול!')) {
+                        // Google Analytics - Track reset action
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'reset_checklist', {
+                                'event_category': 'User Action',
+                                'event_label': 'Hebrew version'
+                            });
+                        }
+                        
+                        localStorage.clear();
+                        location.reload();
+                    }
+                };
+            }
+        });
+
+        // Auto-save every 30 seconds
+        setInterval(saveData, 30000);
+    </script>
+
+</body>
+</html>
